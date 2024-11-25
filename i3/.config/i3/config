@@ -122,10 +122,12 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 ################# menu's in arcolinux
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+#bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+bindsym $mod+shift+d exec --no-startup-id rofi -show run
 
 # start rofi
 bindsym $mod+d exec --no-startup-id ~/.config/i3/launcher/launcher.sh
+#bindsym $mod+d exec --nostartup-id rofi -show run
 
 # start xfce4-appfinder
 bindsym mod1+F2 exec --no-startup-id xfce4-appfinder --collapsed
@@ -743,14 +745,14 @@ mode "$mode_gaps_outer" {
 
     # Window color settings
     # class                 border  backgr. text    indicator
-    client.focused          #FF5555 #FF5555 #FF5555 #FF5555
-    client.unfocused        #222222 #222222 #aaaaaa #222222
-    client.focused_inactive #222222 #222222 #a9a9a9 #222222
-    client.placeholder      #222222 #222222 #aaaaaa #222222
-    client.urgent           #222222 #d42121 #f7f7f7 #d42121
+# class                 border  backgr. text    indicator child_border
+client.focused          #c6a0f6 #c6a0f6 #ffffff #c6a0f6   #c6a0f6
+client.focused_inactive #333333 #5f676a #ffffff #8087a2   #8087a2
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-    client.background       #242424
-
+client.background       #ffffff
     ##STOP THEMING WM
 
 ######################################## THE END 
